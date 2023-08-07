@@ -22,7 +22,7 @@ function App() {
       {photo && (
         <div>
           <h2>{photo.title}</h2>
-          <img src={photo.src.large} alt={photo.alt} />
+          <img src={photo.src.small} alt={photo.alt} />
         </div>
       )}
     </div>
