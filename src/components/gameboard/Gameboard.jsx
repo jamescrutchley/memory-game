@@ -1,19 +1,17 @@
 import { Card } from "./card";
 import { Scoreboard } from "./scoreboard";
+import PropTypes from 'prop-types'; // ES6
 
-export function Gameboard() {
+
+export function Gameboard({ cardArray, scores }) {
   const cardPanel = () => {
     return (
       <ul>
-        <li>
-          <Card />
-        </li>
-        <li>
-          <Card />
-        </li>
-        <li>
-          <Card />
-        </li>
+        {cardArray.map((card, index) => (
+            <li key={index}>
+                <Card value={card.value} alt={card.alt} />
+            </li>
+        ))}
       </ul>
     );
   };
@@ -21,7 +19,15 @@ export function Gameboard() {
   return (
     <div className="gameboard">
       {cardPanel()}
-      <Scoreboard />
     </div>
   );
 }
+
+Gameboard.propTypes = {
+    cardArray: PropTypes.arrayOf(
+      PropTypes.shape({
+        value: PropTypes.number.isRequired,
+        alt: PropTypes.string.isRequired
+      })
+    ).isRequired
+  };
