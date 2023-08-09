@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'; // ES6
 
 export function Scoreboard({ scores }) {
 
-    const [highscore, currentscore] = scores;
+    const [currentscore, highscore] = scores;
 
     return (
         <div className="scoreboard">

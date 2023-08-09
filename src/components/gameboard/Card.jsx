@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'; // ES6
 
 
-export function Card({ value, alt }) {
+export function Card({ value, alt, selected, onClick }) {
 
     return (
-        <div className="card">
+        <div onClick={() => onClick(value)} className={`card ${selected}`}>
             <div className="card-content">
                 {value}
             </div>
@@ -18,5 +18,7 @@ export function Card({ value, alt }) {
 
 Card.propTypes = {
     value: PropTypes.number.isRequired,
-    alt: PropTypes.string.isRequired
+    alt: PropTypes.string.isRequired,
+    selected: PropTypes.string,
+    onClick: PropTypes.func.isRequired,
   };

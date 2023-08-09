@@ -106,6 +106,15 @@ ul {
     background-color: #D5FFE4;
     width: auto;
     height: auto;
+
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card.selected {
+    border: black 2px solid;
 }
 
 .card-footer {
