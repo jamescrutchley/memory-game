@@ -113,9 +113,9 @@ ul {
     justify-content: center;
 }
 
-.card.selected {
+/* .card.selected {
     border: black 2px solid;
-}
+} */
 
 .card-footer {
     background-color: #6F61C0;
